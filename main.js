@@ -1,5 +1,3 @@
-
-
 import { AllProductsView } from "./allProductView.js";
 import { savedCommentsShow } from "./commentView.js";
 import { initMenu, ProductScroll } from "./menu.js";
@@ -10,25 +8,20 @@ document.addEventListener("DOMContentLoaded", async () => {
   await loadProduct();
   savedCommentsShow();
 
-  // --- HEADER SUCHE ---
   const searchbar = document.getElementById("searchbar");
   if (searchbar) {
     searchbar.addEventListener("input", (event) => {
-      // Wir geben die ID des Ergebnis-Containers im Header mit
       showSuggestions(event.target.value, "suggestions");
     });
   }
 
-  // --- SIDEBAR SUCHE (NEU) ---
   const sidebarSearchbar = document.getElementById("sidebarSearchbar");
   if (sidebarSearchbar) {
     sidebarSearchbar.addEventListener("input", (event) => {
-      // Wir geben die ID des Ergebnis-Containers in der Sidebar mit
       showSuggestions(event.target.value, "sidebarSuggestions");
     });
   }
 
-  // Klick außerhalb schließt beide Vorschläge
   document.addEventListener("click", (e) => {
     if (
       !e.target.closest(".header__searchbar") &&
@@ -41,7 +34,6 @@ document.addEventListener("DOMContentLoaded", async () => {
     }
   });
 
-  // --- RESTLICHE LOGIK ---
   const heroButton = document.getElementById("hero__button");
   if (heroButton) {
     heroButton.addEventListener("click", async () => {

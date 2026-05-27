@@ -1,4 +1,3 @@
-//für die Pfeile zum seitlichen Scrollen
 export const ProductScroll = {
   amount: 400,
   moveLeft() {
@@ -10,8 +9,6 @@ export const ProductScroll = {
     container.scrollBy({ left: this.amount, behavior: "smooth" });
   },
 };
-
-//Hamburger Menu öffnen und schließen
 
 export function initMenu() {
   const hamburger = document.getElementById("hamburger");
